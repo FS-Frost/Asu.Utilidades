@@ -95,12 +95,12 @@ namespace Asu.Utilidades.Clases.ArchivoASS {
         /// <summary>
         /// Obtiene o establece el espaciado de la fuente.
         /// </summary>
-        public int Spacing { get; set; }
+        public double Spacing { get; set; }
 
         /// <summary>
         /// Obtiene o establece el ángulo de inclinación de la fuente.
         /// </summary>
-        public int Angle { get; set; }
+        public double Angle { get; set; }
 
         /// <summary>
         /// Indica si se utiliza caja opaca sobre el estilo.
@@ -224,8 +224,8 @@ namespace Asu.Utilidades.Clases.ArchivoASS {
 
                 ScaleX = double.Parse(match.Groups["scaleX"].Value);
                 ScaleY = double.Parse(match.Groups["scaleX"].Value);
-                Spacing = int.Parse(match.Groups["spacing"].Value);
-                Angle = int.Parse(match.Groups["angle"].Value);
+                Spacing = double.Parse(match.Groups["spacing"].Value);
+                Angle = double.Parse(match.Groups["angle"].Value);
 
                 BorderStyle = false;
                 if (match.Groups["borderStyle"].Value == "3") {
