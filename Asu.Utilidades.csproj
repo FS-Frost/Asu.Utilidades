@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E8F6C025-E168-470C-9A03-B9B4DFD50B80}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Asu.Utilidades</RootNamespace>
+    <AssemblyName>Asu.Utilidades</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.9.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.9.0\lib\net40\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\ArchivoASS\AegisubProjectGarbage.cs" />
+    <Compile Include="Clases\ArchivoASS\ArchivoASS.cs" />
+    <Compile Include="Clases\ArchivoASS\AttachedFile.cs" />
+    <Compile Include="Clases\ArchivoASS\AttachedFont.cs" />
+    <Compile Include="Clases\ArchivoASS\AttachedGraphic.cs" />
+    <Compile Include="Clases\ArchivoASS\ScriptInfo.cs" />
+    <Compile Include="Clases\ArchivoASS\Style.cs" />
+    <Compile Include="Clases\Constantes\AttachedFilesTypes.cs" />
+    <Compile Include="Clases\Constantes\EnumAlineaciones.cs" />
+    <Compile Include="Clases\Constantes\EnumCodificaciones.cs" />
+    <Compile Include="Clases\Constantes\EnumPropiedades.cs" />
+    <Compile Include="Clases\Constantes\EnumTags.cs" />
+    <Compile Include="Clases\Constantes\EnumTiposKaraoke.cs" />
+    <Compile Include="Clases\Constantes\EnumYCbCrMatrices.cs" />
+    <Compile Include="Clases\Constantes\EnumWrapStyles.cs" />
+    <Compile Include="Clases\Constantes\TipoLinea.cs" />
+    <Compile Include="Clases\Funciones\Carteles.cs" />
+    <Compile Include="Clases\Funciones\Maths.cs" />
+    <Compile Include="Clases\GrupoTag.cs" />
+    <Compile Include="Clases\Karaoke.cs" />
+    <Compile Include="Clases\Silaba.cs" />
+    <Compile Include="Clases\Funciones\Karaokes.cs" />
+    <Compile Include="Clases\TagsTypes\TagTypeAlpha.cs" />
+    <Compile Include="Clases\TagsTypes\TagTypeColor.cs" />
+    <Compile Include="Clases\TagsTypes\TagTypeString.cs" />
+    <Compile Include="Clases\Tags\TagFx.cs" />
+    <Compile Include="Clases\Tags\TagPbo.cs" />
+    <Compile Include="Clases\Tags\TagP.cs" />
+    <Compile Include="Clases\Tags\TagClipI.cs" />
+    <Compile Include="Clases\Tags\TagFade.cs" />
+    <Compile Include="Clases\Tags\TagClip.cs" />
+    <Compile Include="Clases\Tags\TagMove.cs" />
+    <Compile Include="Clases\Tags\TagOrg.cs" />
+    <Compile Include="Clases\Tags\TagFad.cs" />
+    <Compile Include="Clases\Tags\TagR.cs" />
+    <Compile Include="Clases\Tags\TagKo.cs" />
+    <Compile Include="Clases\Tags\TagKf.cs" />
+    <Compile Include="Clases\Tags\TagK.cs" />
+    <Compile Include="Clases\Tags\TagAlpha.cs" />
+    <Compile Include="Clases\Tags\TagAlpha4.cs" />
+    <Compile Include="Clases\Tags\TagAlpha3.cs" />
+    <Compile Include="Clases\Tags\TagAlpha2.cs" />
+    <Compile Include="Clases\Tags\TagAlpha1.cs" />
+    <Compile Include="Clases\Tags\TagColor4.cs" />
+    <Compile Include="Clases\Tags\TagColor3.cs" />
+    <Compile Include="Clases\Tags\TagColor2.cs" />
+    <Compile Include="Clases\Tags\TagColor1.cs" />
+    <Compile Include="Clases\Tags\TagA.cs" />
+    <Compile Include="Clases\Tags\TagAn.cs" />
+    <Compile Include="Clases\Tags\TagFay.cs" />
+    <Compile Include="Clases\Tags\TagFax.cs" />
+    <Compile Include="Clases\Tags\TagFe.cs" />
+    <Compile Include="Clases\Tags\TagFrz.cs" />
+    <Compile Include="Clases\Tags\TagFry.cs" />
+    <Compile Include="Clases\Tags\TagFrx.cs" />
+    <Compile Include="Clases\Tags\TagFsp.cs" />
+    <Compile Include="Clases\Tags\TagFscy.cs" />
+    <Compile Include="Clases\Tags\TagFscx.cs" />
+    <Compile Include="Clases\Tags\TagFs.cs" />
+    <Compile Include="Clases\Tags\TagFn.cs" />
+    <Compile Include="Clases\Tags\TagBe.cs" />
+    <Compile Include="Clases\Tags\TagBlur.cs" />
+    <Compile Include="Clases\Tags\TagQ.cs" />
+    <Compile Include="Clases\Tags\TagB.cs" />
+    <Compile Include="Clases\Tags\TagT.cs" />
+    <Compile Include="Clases\Tags\TagShadY.cs" />
+    <Compile Include="Clases\Tags\TagShadX.cs" />
+    <Compile Include="Clases\Tags\TagShad.cs" />
+    <Compile Include="Clases\Tags\TagBordY.cs" />
+    <Compile Include="Clases\Tags\TagBordX.cs" />
+    <Compile Include="Clases\Tags\TagBord.cs" />
+    <Compile Include="Clases\TagsTypes\TagTypeDouble.cs" />
+    <Compile Include="Clases\Tags\TagS.cs" />
+    <Compile Include="Clases\Tags\TagU.cs" />
+    <Compile Include="Clases\Constantes\ExpresionesRegulares.cs" />
+    <Compile Include="Clases\FiltroAss.cs" />
+    <Compile Include="Clases\Tags\TagPos.cs" />
+    <Compile Include="Clases\Funciones\Funciones.cs" />
+    <Compile Include="Clases\Linea.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Clases\TagsTypes\Tag.cs" />
+    <Compile Include="Clases\TagsTypes\TagTypeInt.cs" />
+    <Compile Include="Clases\Tags\TagI.cs" />
+    <Compile Include="Clases\Tiempo.cs" />
+    <Compile Include="Tests\FiltroAssTests.cs" />
+    <Compile Include="Tests\KaraokeTests.cs" />
+    <Compile Include="Tests\LineaTests.cs" />
+    <Compile Include="Tests\TagsTests.cs" />
+    <Compile Include="Tests\FuncionesTests.cs" />
+    <Compile Include="Tests\TiempoTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props'))" />
+  </Target>
+</Project>
