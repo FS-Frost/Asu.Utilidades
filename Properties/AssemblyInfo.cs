@@ -7,11 +7,11 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
 [assembly: AssemblyTitle("Asu.Utilidades")]
-[assembly: AssemblyDescription("Funciones y clases para el manejo del formato ASS")]
+[assembly: AssemblyDescription("Librería en .NET Framework para trabajar con el formato de subtítulos ASS.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("SyncRajo Fansub")]
 [assembly: AssemblyProduct("Asu.Utilidades")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
