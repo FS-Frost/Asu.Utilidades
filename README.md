@@ -34,3 +34,27 @@ foreach (var estilo in archivoASS.Styles) {
     }
 }
 ````
+### Modificar tag \pos(x,y) de todas las líneas no comentadas:
+````csharp
+// Abrir el archivo.
+const string ruta = @"Mi archivo.ass";
+var archivo = new ArchivoASS(ruta);
+
+// Filtrar las líneas con el tag deseado.
+var lineasPos = (from l in archivo.Events
+                 where l.Tipo == TipoLinea.Dialogue
+                 where FiltroAss.TagExiste(l.Contenido, Tags.Pos) == true
+                 select l);
+
+// Modificar líneas.
+foreach (var linea in lineasPos) {
+    var tagRaw = FiltroAss.BuscarTag(linea.Contenido, Tags.Pos).Value;
+    var tag = new TagPos(tagRaw);
+    tag.X += 10;
+    tag.Y -= 10;
+    linea.Contenido = FiltroAss.ReemplazarTag(linea.Contenido, Tags.Pos, tag.ToString());
+}
+
+// Guardando archivo modificado.
+archivo.Guardar(true);
+````
