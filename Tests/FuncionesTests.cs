@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Asu.Tests {
     [TestFixture]
-    public class FuncioesTests {
+    public class FuncionesTests {
         #region Casos de prueba
         static object[] casosTruncar = {
             new object[] {
