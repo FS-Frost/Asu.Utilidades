@@ -37,7 +37,7 @@ foreach (var estilo in archivoASS.Styles) {
 ### Modificar tag \pos(x,y) de todas las líneas no comentadas:
 ````csharp
 // Abrir el archivo.
-const string ruta = @"Mi archivo.ass";
+const string ruta = "Mi archivo.ass";
 var archivo = new ArchivoASS(ruta);
 
 // Filtrar las líneas con el tag deseado.

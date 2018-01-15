@@ -334,9 +334,9 @@ namespace Asu.Utilidades.Clases.ArchivoASS {
         /// <summary>
         /// Guarda el archivo en disco.
         /// </summary>
-        /// <param name="sobreEscribir">Indica si el archivo se sobreescribirá de ser necesario.</param>
-        public void Guardar(bool sobreEscribir) {
-            if (!sobreEscribir && File.Exists(Ruta)) {
+        /// <param name="sobrescribir">Indica si el archivo se sobreescribirá de ser necesario.</param>
+        public void Guardar(bool sobrescribir) {
+            if (!sobrescribir && File.Exists(Ruta)) {
                 throw new IOException(string.Format("El archivo {0} ya existe.", Ruta));
             }
 
