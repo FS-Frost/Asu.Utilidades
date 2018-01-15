@@ -1,5 +1,6 @@
 ﻿using Asu.Utilidades.Constantes;
 using System.Collections.Generic;
+using System;
 
 namespace Asu.Utilidades.Clases {
     /// <summary>
@@ -123,8 +124,8 @@ namespace Asu.Utilidades.Clases {
             }
 
             // Tiempos.
-            if (_inicio.ToDouble() >= _fin.ToDouble()) {
-                return;
+            if (_inicio.ToDouble() > _fin.ToDouble()) {
+                throw new InvalidOperationException("El tiempo de inicio de línea debe ser menor o igual al de fin.");
             }
 
             // Márgenes.
