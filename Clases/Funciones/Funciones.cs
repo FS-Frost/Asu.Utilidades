@@ -129,7 +129,28 @@ namespace Asu.Utilidades {
             var lineas = ClipboardGet().Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
             return lineas;
         }
-        
+
+        /// <summary>
+        /// Obtiene la cadena entre comillas.
+        /// </summary>
+        /// <param name="s">Cadena inicial.</param>
+        public static string EntrecomillarString(string s) {
+            return string.Format("\"{0}\"", s);
+        }
+
+        /// <summary>
+        /// Obtiene una cadena con argumentos para entregar a un programa en línea de comandos.
+        /// </summary>
+        /// <param name="args">Argumentos para un programa.</param>
+        public static string UnirArgumentosCMD(params string[] args) {
+            var resultado = EntrecomillarString(args[0]);
+            for (var i = 1; i < args.Length; i++) {
+
+                resultado += " " + EntrecomillarString(args[i]);
+            }
+            return resultado;
+        }
+
         #region Contructores Mensaje()
         /// <summary>
         /// Genera un diálogo de advertencia con el booleano ingresado.

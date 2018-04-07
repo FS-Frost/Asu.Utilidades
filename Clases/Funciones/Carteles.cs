@@ -32,7 +32,6 @@ namespace Asu.Utilidades {
                 azul = Maths.IntToHex((int) azulInterpolado[i], 2);
                 verde = Maths.IntToHex((int) verdeInterpolado[i], 2);
                 rojo = Maths.IntToHex((int) rojoInterpolado[i], 2);
-
                 // Agregando color interpolado.
                 coloresInterpolados.Add(string.Format("&H{0}{1}{2}&", azul, verde, rojo));
             }

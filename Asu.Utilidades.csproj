@@ -67,6 +67,7 @@
     <Compile Include="Clases\Constantes\EnumWrapStyles.cs" />
     <Compile Include="Clases\Constantes\TipoLinea.cs" />
     <Compile Include="Clases\Funciones\Carteles.cs" />
+    <Compile Include="Clases\Funciones\Extensiones.cs" />
     <Compile Include="Clases\Funciones\Maths.cs" />
     <Compile Include="Clases\GrupoTag.cs" />
     <Compile Include="Clases\Karaoke.cs" />

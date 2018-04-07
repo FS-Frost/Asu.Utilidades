@@ -55,6 +55,6 @@ foreach (var linea in lineasPos) {
     linea.Contenido = FiltroAss.ReemplazarTag(linea.Contenido, Tags.Pos, tag.ToString());
 }
 
-// Guardando archivo modificado.
+// Guardar archivo modificado.
 archivo.Guardar(true);
 ````

@@ -315,28 +315,28 @@ namespace Asu.Utilidades.Clases.ArchivoASS {
             _Alignment = AlineacionesInfo.AlineacionToInt(Alignment);
             _Encoding = (int) Encoding;
             
-            _Color1 = string.Format("&H{0:00}{1:00}{2:00}{3:00}", 
-                Maths.IntToHex(PrimaryAlpha), 
-                Maths.IntToHex(PrimaryColour.Blue), 
-                Maths.IntToHex(PrimaryColour.Green), 
+            _Color1 = string.Format("&H{0:00}{1:00}{2:00}{3:00}",
+                Maths.IntToHex(PrimaryAlpha),
+                Maths.IntToHex(PrimaryColour.Blue),
+                Maths.IntToHex(PrimaryColour.Green),
                 Maths.IntToHex(PrimaryColour.Red));
 
-            _Color2 = string.Format("&H{0:00}{1:00}{2:00}{3:00}", 
-                Maths.IntToHex(SecondaryAlpha), 
-                Maths.IntToHex(SecondaryColour.Blue), 
-                Maths.IntToHex(SecondaryColour.Green), 
+            _Color2 = string.Format("&H{0:00}{1:00}{2:00}{3:00}",
+                Maths.IntToHex(SecondaryAlpha),
+                Maths.IntToHex(SecondaryColour.Blue),
+                Maths.IntToHex(SecondaryColour.Green),
                 Maths.IntToHex(SecondaryColour.Red));
 
-            _Color3 = string.Format("&H{0:00}{1:00}{2:00}{3:00}", 
-                Maths.IntToHex(OutlineAlpha), 
-                Maths.IntToHex(OutlineColour.Blue), 
-                Maths.IntToHex(OutlineColour.Green), 
+            _Color3 = string.Format("&H{0:00}{1:00}{2:00}{3:00}",
+                Maths.IntToHex(OutlineAlpha),
+                Maths.IntToHex(OutlineColour.Blue),
+                Maths.IntToHex(OutlineColour.Green),
                 Maths.IntToHex(OutlineColour.Red));
 
-            _Color4 = string.Format("&H{0:00}{1:00}{2:00}{3:00}", 
-                Maths.IntToHex(BackAlpha), 
-                Maths.IntToHex(BackColour.Blue), 
-                Maths.IntToHex(BackColour.Green), 
+            _Color4 = string.Format("&H{0:00}{1:00}{2:00}{3:00}",
+                Maths.IntToHex(BackAlpha),
+                Maths.IntToHex(BackColour.Blue),
+                Maths.IntToHex(BackColour.Green),
                 Maths.IntToHex(BackColour.Red));
 
             return string.Format("Style: {0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13},{14},{15},{16},{17},{18},{19},{20},{21},{22}", Name, FontName, FontSize, _Color1, _Color2, _Color3, _Color4, _Bold, _Italic, _Underline, _StrikeOut, ScaleX, ScaleY, Spacing, Angle, _BorderStyle, Outline, Shadow, _Alignment, MarginL, MarginR, MarginV, _Encoding);
