@@ -1225,7 +1225,7 @@ namespace Asu.Tests {
 
         [Test, Category("Funciones"), TestCaseSource("casosTagExiste")]
         public void FuncionesTagExiste(string texto, Tags t, bool esperado) {
-            var real = FiltroAss.TagExists(texto, t);
+            var real = AssFilter.TagExists(texto, t);
             Assert.AreEqual(esperado, real);
         }
         
@@ -1244,7 +1244,7 @@ namespace Asu.Tests {
             var _contenido = @"{\pos(100,0)}Con{\pos(0,0)}tenido";
 
             var s = @"Dialogue: 1,2:22:22.22,3:33:33.33,Default,Actor,4,5,6,Efecto,{\pos(100,0)}Con{\pos(0,0)}tenido";
-            var p = FiltroAss.FilterProperties(s);
+            var p = AssFilter.FilterProperties(s);
 
             Assert.AreEqual(_tipo, p[PropertyInfo.PropiedadToString(Property.Type)].Value);
 
@@ -1271,13 +1271,13 @@ namespace Asu.Tests {
         
         [Test, Category("Filtro"), TestCaseSource("casosBuscarTag")]
         public void FiltroAssBuscar(string texto, Tags tag, string esperado) {
-            var resultado = FiltroAss.SearchTag(texto, tag).Value;
+            var resultado = AssFilter.SearchTag(texto, tag).Value;
             Assert.AreEqual(esperado, resultado);
         }
         
         [Test, Category("Filtro"), TestCaseSource("casosReemplazar")]
         public void PruebaReemplazar(string textoOriginal, string textoNuevo, Tags tagOriginal, string tagNuevo) {
-            var resultado = FiltroAss.ReplaceTag(textoOriginal, tagOriginal, tagNuevo);
+            var resultado = AssFilter.ReplaceTag(textoOriginal, tagOriginal, tagNuevo);
             Assert.AreEqual(textoNuevo, resultado);
         }
     }

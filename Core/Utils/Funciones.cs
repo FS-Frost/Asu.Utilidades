@@ -79,7 +79,7 @@ namespace Asu.Utils {
         /// Coloca una lista de líneas en formato ASS en el portapapeles.
         /// </summary>
         /// <param name="lista"></param>
-        public static void ClipboardSetLines(List<Linea> lista) {
+        public static void ClipboardSetLines(List<Line> lista) {
             var resultado = "";
             foreach (var l in lista) {
                 resultado += l.ToString() + Environment.NewLine;

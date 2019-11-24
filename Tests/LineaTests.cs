@@ -20,16 +20,16 @@ namespace Asu.Tests {
         
         [Test, Category("Linea"), TestCaseSource("casosString")]
         public void LineaString(string ingresado, string esperado) {
-            var lIngresado = new Linea(ingresado);
-            var lEsperado = new Linea(esperado);
+            var lIngresado = new Line(ingresado);
+            var lEsperado = new Line(esperado);
             Assert.AreEqual(lEsperado.ToString(), lIngresado.ToString());
         }
 
         [Test, Category("Linea")]
         public void LineaDuracion() {
             var s = @"Dialogue: 0,0:00:00.01,0:00:02.99,Default - Copia,,0,0,0,,";
-            var l = new Linea(s);
-            Assert.AreEqual(2.98, l.Duracion);
+            var l = new Line(s);
+            Assert.AreEqual(2.98, l.Length);
         }
     }
 }

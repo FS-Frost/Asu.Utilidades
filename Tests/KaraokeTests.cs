@@ -20,8 +20,8 @@ namespace Asu.Tests {
 
         [Test, Category("Karaoke"), TestCaseSource("casosToString")]
         public void KaraokeToString(string ingresado, string esperado) {
-            var linea = new Linea(ingresado);
-            var karaoke = new Karaoke(linea.Contenido);
+            var linea = new Line(ingresado);
+            var karaoke = new Karaoke(linea.Content);
             Assert.AreEqual(esperado, karaoke.ToString());
         }
     }

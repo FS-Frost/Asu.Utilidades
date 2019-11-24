@@ -10,16 +10,16 @@ namespace Asu.Utils.Core {
         /// <summary>
         /// Obtiene o establece la lista de sílabas que componen secuencialmente el karoake.
         /// </summary>
-        public List<Silaba> Silabas { get; set; }
+        public List<Syllabe> Syllabes { get; set; }
         
         /// <summary>
         /// Obtiene o establece la duración total del karaoke en centésimas de segundo.
         /// </summary>
-        public int Duracion {
+        public int Length {
             get {
                 var d = 0;
-                foreach (var sil in Silabas) {
-                    d += sil.Duracion;
+                foreach (var sil in Syllabes) {
+                    d += sil.Length;
                 }
 
                 return d;
@@ -30,7 +30,7 @@ namespace Asu.Utils.Core {
         /// Inicializa una nueva instancia de la clase <see cref="Karaoke"/>.
         /// </summary>
         public Karaoke() {
-            Silabas = new List<Silaba>();
+            Syllabes = new List<Syllabe>();
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace Asu.Utils.Core {
             var elementos = FiltrarContenido(contenidoAjustado);
 
             // Obteniendo las sílabas.
-            Silabas = FiltrarSilabas(elementos);
+            Syllabes = FiltrarSilabas(elementos);
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Asu.Utils.Core {
         /// </summary>
         /// <param name="karaoke"></param>
         public Karaoke(Karaoke karaoke) {
-            Silabas = karaoke.Silabas;
+            Syllabes = karaoke.Syllabes;
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Asu.Utils.Core {
         public override string ToString() {
             var resultado = "";
 
-            foreach (var sil in Silabas) {
+            foreach (var sil in Syllabes) {
                 resultado += sil;
             }
             return resultado; 
@@ -79,16 +79,16 @@ namespace Asu.Utils.Core {
             return lista;
         }
 
-        private List<Silaba> FiltrarSilabas(List<string> elementos) {
-            var silabas = new List<Silaba>();
+        private List<Syllabe> FiltrarSilabas(List<string> elementos) {
+            var silabas = new List<Syllabe>();
 
             for (var i = 0; i < elementos.Count; i++) {
                 var elementoActual = elementos[i];
-                var silaba = new Silaba();
+                var silaba = new Syllabe();
 
-                if (FiltroAss.IsTagGroup(elementoActual)) {
+                if (AssFilter.IsTagGroup(elementoActual)) {
                     // Si es grupo {}.
-                    silaba.GrupoTag = new TagGroup(elementoActual);
+                    silaba.TagGroup = new TagGroup(elementoActual);
                 } else {
                     // Si es texto.
                     if (elementoActual == string.Empty) {
@@ -97,11 +97,11 @@ namespace Asu.Utils.Core {
 
                     if (i == 0) {
                         // Si el primer elemento es un texto, es una sílaba sin tags.
-                        silaba.Texto = elementoActual;
+                        silaba.Text = elementoActual;
                     } else {
                         // Si no es el primero, sí o sí tiene un grupo antes,
                         // por tanto el texto corresponde a esa sílaba.
-                        silabas[silabas.Count - 1].Texto = elementoActual;
+                        silabas[silabas.Count - 1].Text = elementoActual;
                         goto Salida;
                     }
                 }
@@ -116,26 +116,26 @@ namespace Asu.Utils.Core {
         }
 
         /// <summary>
-        /// Instancia una <see cref="Silaba"/> y la agrega al karaoke.
+        /// Instancia una <see cref="Syllabe"/> y la agrega al karaoke.
         /// </summary>
         /// <param name="duracion">Duración de la sílaba.</param>
         /// <param name="texto">Texto de la sílaba.</param>
         /// <param name="tipoKaraoke">Tipo de karaoke de la sílaba.</param>
         public void AgregarSilaba(int duracion, string texto, KaraokeType tipoKaraoke) {
-            var sil = new Silaba(duracion, texto, tipoKaraoke);
-            Silabas.Add(sil);
+            var sil = new Syllabe(duracion, texto, tipoKaraoke);
+            Syllabes.Add(sil);
         }
 
         /// <summary>
-        /// Instancia una <see cref="Silaba"/> y la agrega al karaoke.
+        /// Instancia una <see cref="Syllabe"/> y la agrega al karaoke.
         /// </summary>
         /// <param name="duracion">Duración de la sílaba.</param>
         /// <param name="texto">Texto de la sílaba.</param>
         /// <param name="tipoKaraoke">Tipo de karaoke de la sílaba.</param>
         /// <param name="grupoTag">Grupo de tags de la sílaba.</param>
         public void AgregarSilaba(int tiempo, string texto, KaraokeType tipoKaraoke, TagGroup grupoTag) {
-            var sil = new Silaba(tiempo, texto, tipoKaraoke, grupoTag);
-            Silabas.Add(sil);
+            var sil = new Syllabe(tiempo, texto, tipoKaraoke, grupoTag);
+            Syllabes.Add(sil);
         }
 
         /// <summary>
@@ -143,16 +143,16 @@ namespace Asu.Utils.Core {
         /// </summary>
         /// <param name="tipo"></param>
         public void Normalizar(KaraokeType tipo) {
-            Silabas.ForEach(x => {
-                x.Tipo = tipo;
+            Syllabes.ForEach(x => {
+                x.Type = tipo;
             });
         }
 
         public static Karaoke operator +(Karaoke k1, int t) {
             var k2 = k1;
 
-            foreach (var sil in k2.Silabas) {
-                sil.Duracion += t;
+            foreach (var sil in k2.Syllabes) {
+                sil.Length += t;
             }
 
             return k2;
@@ -161,8 +161,8 @@ namespace Asu.Utils.Core {
         public static Karaoke operator -(Karaoke k1, int t) {
             var k2 = k1;
 
-            foreach (var sil in k2.Silabas) {
-                sil.Duracion -= t;
+            foreach (var sil in k2.Syllabes) {
+                sil.Length -= t;
             }
 
             return k2;

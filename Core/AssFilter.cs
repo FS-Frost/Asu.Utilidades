@@ -8,7 +8,7 @@ namespace Asu.Utils {
     /// <summary>
     /// Proporciona funciones estáticas para trabajar con el formato ASS.
     /// </summary>
-    public static class FiltroAss {
+    public static class AssFilter {
 
         /// <summary>
         /// Busca la propiedad especificada dentro de la cadena.

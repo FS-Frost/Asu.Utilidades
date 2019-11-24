@@ -11,15 +11,15 @@ namespace Asu.Utils {
     /// </summary>
     public static class Karaokes {
         /// <summary>
-        /// Devuelve un <see cref="Karaoke"/> con las sílabas de romaji divididas a partir de una <see cref="Linea"/>.
+        /// Devuelve un <see cref="Karaoke"/> con las sílabas de romaji divididas a partir de una <see cref="Line"/>.
         /// </summary>
         /// <param name="linea">Linea cuyo contenido contenga romaji.</param>
-        public static Karaoke SplitSyllabes(Linea linea) {
+        public static Karaoke SplitSyllabes(Line linea) {
             // Karaoke resultante.
             var karaoke = new Karaoke();
 
             // Palabras del karaoke.
-            var palabras = linea.Contenido.Split(' ').ToList();
+            var palabras = linea.Content.Split(' ').ToList();
 
             // Dividiendo palabras.
             for (var i = 0; i < palabras.Count; i++) {
@@ -39,24 +39,24 @@ namespace Asu.Utils {
                 }
 
                 if (i != palabras.Count - 1) {
-                    karaoke.Silabas.Last().Texto += " ";
+                    karaoke.Syllabes.Last().Text += " ";
                 }
             }
 
             // Tiempo de sílabas.
-            var tiempoSil = (int) Math.Round((linea.Duracion * 100 / karaoke.Silabas.Count));
+            var tiempoSil = (int) Math.Round((linea.Length * 100 / karaoke.Syllabes.Count));
 
             // Agregando el tiempo a cada sílaba.
-            karaoke.Silabas.ForEach(sil => {
-                sil.Duracion = tiempoSil;
+            karaoke.Syllabes.ForEach(sil => {
+                sil.Length = tiempoSil;
             });
 
             // Ajustando última sílaba para completar el tiempo de línea.
-            if (karaoke.Duracion != linea.Duracion * 100) {
-                var delta = linea.Duracion - karaoke.Duracion / 100;
+            if (karaoke.Length != linea.Length * 100) {
+                var delta = linea.Length - karaoke.Length / 100;
 
                 // Por hacer: Agregar if mayor o menor.
-                karaoke.Silabas.Last().Duracion += (int) delta;
+                karaoke.Syllabes.Last().Length += (int) delta;
             }
 
             return karaoke;
@@ -83,16 +83,16 @@ namespace Asu.Utils {
         }
 
         /// <summary>
-        /// Devuelve una lista con dos líneas correspondientes al contenido de una <see cref="Linea"/> dividido en el índice indicado.
+        /// Devuelve una lista con dos líneas correspondientes al contenido de una <see cref="Line"/> dividido en el índice indicado.
         /// </summary>
-        /// <param name="lineaKaraoke"><see cref="Linea"/> cuyo contenido es divisible como romaji.</param>
+        /// <param name="lineaKaraoke"><see cref="Line"/> cuyo contenido es divisible como romaji.</param>
         /// <param name="indice">Indice de sílaba donde dividir la línea.</param>
-        public static List<Linea> SplitKaraoke(Linea lineaKaraoke, int indice) {
-            var listaLineas = new List<Linea>();
-            var karaoke = new Karaoke(lineaKaraoke.Contenido);
+        public static List<Line> SplitKaraoke(Line lineaKaraoke, int indice) {
+            var listaLineas = new List<Line>();
+            var karaoke = new Karaoke(lineaKaraoke.Content);
 
-            var sil = (from x in karaoke.Silabas
-                       select x.Texto).ToList();
+            var sil = (from x in karaoke.Syllabes
+                       select x.Text).ToList();
 
             // Sílaba de inicio para la segunda, iniciando justo después de la anterior.
             var inicioSegunda = indice + 1;
@@ -108,7 +108,7 @@ namespace Asu.Utils {
             // Generando suma total en centésimas de segundo de tiempos de la primera línea.
             var tiempo1Double = 0.0;
             for (var i = 0; i < indice + 1; i++) {
-                tiempo1Double = tiempo1Double + karaoke.Silabas[i].Duracion;
+                tiempo1Double = tiempo1Double + karaoke.Syllabes[i].Length;
             }
 
             // Pasando a segundos.
@@ -120,7 +120,7 @@ namespace Asu.Utils {
             // Generando suma total en centésimas de segundo de tiempos de la segunda línea.
             var tiempo2Double = 0.0;
             for (var i = inicioSegunda; i < sil.Count; i++) {
-                tiempo2Double = tiempo2Double + karaoke.Silabas[i].Duracion;
+                tiempo2Double = tiempo2Double + karaoke.Syllabes[i].Length;
             }
 
             // Pasando a segundos.
@@ -130,27 +130,27 @@ namespace Asu.Utils {
             var tiempo2 = new Time(tiempo2Double);
 
             // Generando primera línea.
-            var linea1 = new Linea(lineaKaraoke) {
-                Contenido = ""
+            var linea1 = new Line(lineaKaraoke) {
+                Content = ""
             };
 
-            linea1.Fin = tiempo1 + linea1.Inicio;
+            linea1.End = tiempo1 + linea1.Start;
 
             // Agregando sílabas correspondientes.
             for (var i = 0; i < indice + 1; i++) {
-                linea1.Contenido += karaoke.Silabas[i].ToString();
+                linea1.Content += karaoke.Syllabes[i].ToString();
             }
 
             // Generando segunda línea.			
-            var linea2 = new Linea(lineaKaraoke) {
-                Contenido = ""
+            var linea2 = new Line(lineaKaraoke) {
+                Content = ""
             };
 
-            linea2.Inicio = linea2.Fin - tiempo2;
+            linea2.Start = linea2.End - tiempo2;
 
             // Agregando sílabas correspondientes.
             for (var i = inicioSegunda; i < sil.Count; i++) {
-                linea2.Contenido += karaoke.Silabas[i].ToString();
+                linea2.Content += karaoke.Syllabes[i].ToString();
             }
 
             listaLineas.Add(linea1);
@@ -160,13 +160,13 @@ namespace Asu.Utils {
         }
 
         /// <summary>
-        /// Devuelve una lista con N+1 líneas correspondientes al contenido de una <see cref="Linea"/> dividido en los N índices indicados.
+        /// Devuelve una lista con N+1 líneas correspondientes al contenido de una <see cref="Line"/> dividido en los N índices indicados.
         /// </summary>
-        /// <param name="lineaKaraoke"><see cref="Linea"/> cuyo contenido es divisible como romaji.</param>
+        /// <param name="lineaKaraoke"><see cref="Line"/> cuyo contenido es divisible como romaji.</param>
         /// <param name="indices">Arreglo con índices de sílabas donde dividir la línea.</param>
-        public static List<Linea> SplitKaraoke(Linea lineaKaraoke, int[] indices) {
-            var listaResultante = new List<Linea>();
-            var lineasDivididas = new List<Linea>();
+        public static List<Line> SplitKaraoke(Line lineaKaraoke, int[] indices) {
+            var listaResultante = new List<Line>();
+            var lineasDivididas = new List<Line>();
             var indicesOrdenados = (from i in indices
                                    orderby i
                                    select i).ToArray();
@@ -176,7 +176,7 @@ namespace Asu.Utils {
                 var finPrimera = indicesOrdenados[i];
                 
                 if (i > 0) {
-                    finPrimera -= new Karaoke(lineasDivididas.First().Contenido).Silabas.Count;
+                    finPrimera -= new Karaoke(lineasDivididas.First().Content).Syllabes.Count;
                 }
 
                 lineasDivididas = SplitKaraoke(dividiendo, finPrimera);

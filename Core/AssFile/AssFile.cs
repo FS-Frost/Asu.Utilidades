@@ -37,7 +37,7 @@ namespace Asu.Utils.Core.AssFile {
         /// <summary>
         /// Obtiene o establece la lista de líneas.
         /// </summary>
-        public List<Linea> Events { get; set; }
+        public List<Line> Events { get; set; }
 
         /// <summary>
         /// Obtiene o establece la ruta del directorio del archivo.
@@ -91,7 +91,7 @@ namespace Asu.Utils.Core.AssFile {
             Fonts = new List<AttachedFont>();
             Graphics = new List<AttachedGraphic>();
             Styles = new List<Style>();
-            Events = new List<Linea>();
+            Events = new List<Line>();
             Directory = System.IO.Path.GetDirectoryName(ruta);
             Name = System.IO.Path.GetFileNameWithoutExtension(ruta);
             Extension = System.IO.Path.GetExtension(ruta);
@@ -311,7 +311,7 @@ namespace Asu.Utils.Core.AssFile {
 
                 if (eventsActivo) {
                     if (lineaActual.StartsWith(_LineDialogue) || lineaActual.StartsWith(_LineComment)) {
-                        var linea = new Linea(lineaActual);
+                        var linea = new Line(lineaActual);
                         Events.Add(linea);
                     }
                 }

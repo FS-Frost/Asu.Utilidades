@@ -288,247 +288,247 @@ namespace Asu.Utils.Core {
 
                 var tags = match.Groups["grupo"].Value;
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.A)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.A)) {
                     TagA = new TagA(tags);
                     Tags.Add(TagA.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Alpha)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Alpha)) {
                     TagAlpha = new TagAlpha(tags);
                     Tags.Add(TagAlpha.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Alpha1)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Alpha1)) {
                     TagAlpha1 = new TagAlpha1(tags);
                     Tags.Add(TagAlpha1.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Alpha2)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Alpha2)) {
                     TagAlpha2 = new TagAlpha2(tags);
                     Tags.Add(TagAlpha2.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Alpha3)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Alpha3)) {
                     TagAlpha3 = new TagAlpha3(tags);
                     Tags.Add(TagAlpha3.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Alpha4)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Alpha4)) {
                     TagAlpha4 = new TagAlpha4(tags);
                     Tags.Add(TagAlpha4.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.An)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.An)) {
                     TagAn = new TagAn(tags);
                     Tags.Add(TagAn.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.B)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.B)) {
                     TagB = new TagB(tags);
                     Tags.Add(TagB.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Be)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Be)) {
                     TagBe = new TagBe(tags);
                     Tags.Add(TagBe.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Blur)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Blur)) {
                     TagBlur = new TagBlur(tags);
                     Tags.Add(TagBlur.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Bord)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Bord)) {
                     TagBord = new TagBord(tags);
                     Tags.Add(TagBord.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.BordX)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.BordX)) {
                     TagBordX = new TagBordX(tags);
                     Tags.Add(TagBordX.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.BordY)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.BordY)) {
                     TagBordY = new TagBordY(tags);
                     Tags.Add(TagBordY.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Clip)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Clip)) {
                     TagClip = new TagClip(tags);
                     Tags.Add(TagClip.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.ClipI)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.ClipI)) {
                     TagClipI = new TagClipI(tags);
                     Tags.Add(TagClipI.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Color1)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Color1)) {
                     TagColor1 = new TagColor1(tags);
                     Tags.Add(TagColor1.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Color2)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Color2)) {
                     TagColor2 = new TagColor2(tags);
                     Tags.Add(TagColor2.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Color3)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Color3)) {
                     TagColor3 = new TagColor3(tags);
                     Tags.Add(TagColor3.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Color4)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Color4)) {
                     TagColor4 = new TagColor4(tags);
                     Tags.Add(TagColor4.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Fad)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Fad)) {
                     TagFad = new TagFad(tags);
                     Tags.Add(TagFad.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Fade)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Fade)) {
                     TagFade = new TagFade(tags);
                     Tags.Add(TagFade.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Fax)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Fax)) {
                     TagFax = new TagFax(tags);
                     Tags.Add(TagFax.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Fay)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Fay)) {
                     TagFay = new TagFay(tags);
                     Tags.Add(TagFay.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Fe)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Fe)) {
                     TagFe = new TagFe(tags);
                     Tags.Add(TagFe.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Fn)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Fn)) {
                     TagFn = new TagFn(tags);
                     Tags.Add(TagFn.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Frx)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Frx)) {
                     TagFrx = new TagFrx(tags);
                     Tags.Add(TagFrx.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Fry)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Fry)) {
                     TagFry = new TagFry(tags);
                     Tags.Add(TagFry.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Frz)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Frz)) {
                     TagFrz = new TagFrz(tags);
                     Tags.Add(TagFrz.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Fs)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Fs)) {
                     TagFs = new TagFs(tags);
                     Tags.Add(TagFs.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Fscx)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Fscx)) {
                     TagFscx = new TagFscx(tags);
                     Tags.Add(TagFscx.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Fscy)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Fscy)) {
                     TagFscy = new TagFscy(tags);
                     Tags.Add(TagFscy.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Fsp)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Fsp)) {
                     TagFsp = new TagFsp(tags);
                     Tags.Add(TagFsp.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.I)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.I)) {
                     TagI = new TagI(tags);
                     Tags.Add(TagI.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.K)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.K)) {
                     TagK = new TagK(tags);
                     Tags.Add(TagK.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Kf)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Kf)) {
                     TagKf = new TagKf(tags);
                     Tags.Add(TagKf.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Ko)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Ko)) {
                     TagKo = new TagKo(tags);
                     Tags.Add(TagKo.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Move)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Move)) {
                     TagMove = new TagMove(tags);
                     Tags.Add(TagMove.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Org)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Org)) {
                     TagOrg = new TagOrg(tags);
                     Tags.Add(TagOrg.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.P)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.P)) {
                     TagP = new TagP(tags);
                     Tags.Add(TagP.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Pbo)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Pbo)) {
                     TagPbo = new TagPbo(tags);
                     Tags.Add(TagPbo.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Pos)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Pos)) {
                     TagPos = new TagPos(tags);
                     Tags.Add(TagPos.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Q)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Q)) {
                     TagQ = new TagQ(tags);
                     Tags.Add(TagQ.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.R)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.R)) {
                     TagR = new TagR(tags);
                     Tags.Add(TagR.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.S)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.S)) {
                     TagS = new TagS(tags);
                     Tags.Add(TagS.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.Shad)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.Shad)) {
                     TagShad = new TagShad(tags);
                     Tags.Add(TagShad.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.ShadX)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.ShadX)) {
                     TagShadX = new TagShadX(tags);
                     Tags.Add(TagShadX.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.ShadY)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.ShadY)) {
                     TagShadY = new TagShadY(tags);
                     Tags.Add(TagShadY.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.T)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.T)) {
                     TagT = new TagT(tags);
                     Tags.Add(TagT.ToString());
                 }
 
-                if (FiltroAss.TagExists(tags, Constants.Tags.U)) {
+                if (AssFilter.TagExists(tags, Constants.Tags.U)) {
                     TagU = new TagU(tags);
                     Tags.Add(TagU.ToString());
                 }
