@@ -1,12 +1,12 @@
-﻿using Asu.Utilidades;
-using Asu.Utilidades.Constantes;
+﻿using Asu.Utils;
+using Asu.Utils.Constants;
 using NUnit.Framework;
 
 namespace Asu.Tests {
     [TestFixture]
     public class FiltroAssTests {
         #region Casos de prueba
-        static object[] casosTagExiste = {
+        static readonly object[] casosTagExiste = {
             // Tag: a.
             // Nulo
             new object[] {
@@ -837,7 +837,7 @@ namespace Asu.Tests {
         };
 
         // textoOriginal, textoNuevo, tagOriginal, tagNuevo
-        static object[] casosReemplazar = {
+        static readonly object[] casosReemplazar = {
             // Tag: a.
             // Tag: alpha.
             // Tag: 1a.
@@ -929,7 +929,7 @@ namespace Asu.Tests {
             // Tag: u.
         };
 
-        static object[] casosBuscarTag = {
+        static readonly object[] casosBuscarTag = {
             // Tag: a.
             new object[] {
                 @"Texto{comentario\a4\tag}Texto{\a5}",
@@ -1212,16 +1212,20 @@ namespace Asu.Tests {
                 Tags.U,
                 @"\u1" },
         };
+
+        public static object[] CasosReemplazar => casosReemplazar;
+
+        public static object[] CasosBuscarTag => casosBuscarTag;
         #endregion
 
         [SetUp]
         public void Iniciar() {
-            Funciones.CambiarCultura();
+            Funciones.ChangeCulture();
         }
 
         [Test, Category("Funciones"), TestCaseSource("casosTagExiste")]
         public void FuncionesTagExiste(string texto, Tags t, bool esperado) {
-            var real = FiltroAss.TagExiste(texto, t);
+            var real = FiltroAss.TagExists(texto, t);
             Assert.AreEqual(esperado, real);
         }
         
@@ -1240,40 +1244,40 @@ namespace Asu.Tests {
             var _contenido = @"{\pos(100,0)}Con{\pos(0,0)}tenido";
 
             var s = @"Dialogue: 1,2:22:22.22,3:33:33.33,Default,Actor,4,5,6,Efecto,{\pos(100,0)}Con{\pos(0,0)}tenido";
-            var p = FiltroAss.FiltrarPropiedades(s);
+            var p = FiltroAss.FilterProperties(s);
 
-            Assert.AreEqual(_tipo, p[PropiedadesInfo.PropiedadToString(Propiedades.Tipo)].Value);
+            Assert.AreEqual(_tipo, p[PropertyInfo.PropiedadToString(Property.Type)].Value);
 
-            Assert.AreEqual(_capa, p[PropiedadesInfo.PropiedadToString(Propiedades.Capa)].Value);
+            Assert.AreEqual(_capa, p[PropertyInfo.PropiedadToString(Property.Layer)].Value);
 
-            Assert.AreEqual(_inicio, p[PropiedadesInfo.PropiedadToString(Propiedades.Inicio)].Value);
+            Assert.AreEqual(_inicio, p[PropertyInfo.PropiedadToString(Property.Start)].Value);
 
-            Assert.AreEqual(_fin, p[PropiedadesInfo.PropiedadToString(Propiedades.Fin)].Value);
+            Assert.AreEqual(_fin, p[PropertyInfo.PropiedadToString(Property.End)].Value);
 
-            Assert.AreEqual(_estilo, p[PropiedadesInfo.PropiedadToString(Propiedades.Estilo)].Value);
+            Assert.AreEqual(_estilo, p[PropertyInfo.PropiedadToString(Property.Style)].Value);
 
-            Assert.AreEqual(_actor, p[PropiedadesInfo.PropiedadToString(Propiedades.Actor)].Value);
+            Assert.AreEqual(_actor, p[PropertyInfo.PropiedadToString(Property.Actor)].Value);
 
-            Assert.AreEqual(_efecto, p[PropiedadesInfo.PropiedadToString(Propiedades.Efecto)].Value);
+            Assert.AreEqual(_efecto, p[PropertyInfo.PropiedadToString(Property.Effect)].Value);
 
-            Assert.AreEqual(_margenI, p[PropiedadesInfo.PropiedadToString(Propiedades.MargenIzquierdo)].Value);
+            Assert.AreEqual(_margenI, p[PropertyInfo.PropiedadToString(Property.MarginLeft)].Value);
 
-            Assert.AreEqual(_margenD, p[PropiedadesInfo.PropiedadToString(Propiedades.MargenDerecho)].Value);
+            Assert.AreEqual(_margenD, p[PropertyInfo.PropiedadToString(Property.MarginRight)].Value);
 
-            Assert.AreEqual(_margenV, p[PropiedadesInfo.PropiedadToString(Propiedades.MargenVertical)].Value);
+            Assert.AreEqual(_margenV, p[PropertyInfo.PropiedadToString(Property.MarginVertical)].Value);
 
-            Assert.AreEqual(_contenido, p[PropiedadesInfo.PropiedadToString(Propiedades.Contenido)].Value);
+            Assert.AreEqual(_contenido, p[PropertyInfo.PropiedadToString(Property.Content)].Value);
         }
         
         [Test, Category("Filtro"), TestCaseSource("casosBuscarTag")]
         public void FiltroAssBuscar(string texto, Tags tag, string esperado) {
-            var resultado = FiltroAss.BuscarTag(texto, tag).Value;
+            var resultado = FiltroAss.SearchTag(texto, tag).Value;
             Assert.AreEqual(esperado, resultado);
         }
         
         [Test, Category("Filtro"), TestCaseSource("casosReemplazar")]
         public void PruebaReemplazar(string textoOriginal, string textoNuevo, Tags tagOriginal, string tagNuevo) {
-            var resultado = FiltroAss.ReemplazarTag(textoOriginal, tagOriginal, tagNuevo);
+            var resultado = FiltroAss.ReplaceTag(textoOriginal, tagOriginal, tagNuevo);
             Assert.AreEqual(textoNuevo, resultado);
         }
     }

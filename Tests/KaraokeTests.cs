@@ -1,11 +1,11 @@
-﻿using Asu.Utilidades.Clases;
+﻿using Asu.Utils.Core;
 using NUnit.Framework;
 
 namespace Asu.Tests {
     [TestFixture]
     class KaraokeTests {
         #region Casos de prueba
-        static object[] casosToString = {
+        static readonly object[] casosToString = {
             // Normal.
             new object[] {
                 @"Comment: 0,0:02:18.20,0:02:20.55,Romaji,,0,0,0,karaoke,{\kf21}a{\kf20}ri{\kf21}fu{\kf23}re{\kf20}ta {\kf22}mo{\kf22}no {\kf21}da{\kf24}ke{\kf41}do",

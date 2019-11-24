@@ -1,5 +1,5 @@
-﻿using Asu.Utilidades;
-using Asu.Utilidades.Clases;
+﻿using Asu.Utils;
+using Asu.Utils.Core;
 using NUnit.Framework;
 using System.Collections.Generic;
 
@@ -7,7 +7,7 @@ namespace Asu.Tests {
     [TestFixture]
     public class FuncionesTests {
         #region Casos de prueba
-        static object[] casosTruncar = {
+        static readonly object[] casosTruncar = {
             new object[] {
                 0.123456789,
                 0,
@@ -54,7 +54,7 @@ namespace Asu.Tests {
                 2},
         };
 
-        static object[] casosIntToHex = {
+        static readonly object[] casosIntToHex = {
             new object[] {
                 0,
                 "0" },
@@ -63,7 +63,7 @@ namespace Asu.Tests {
                 "FF" },
         };
 
-        static object[] casosIntToHexDigitos = {
+        static readonly object[] casosIntToHexDigitos = {
             new object[] {
                 0,
                 "00",
@@ -82,7 +82,7 @@ namespace Asu.Tests {
                 2 },
         };
 
-        static object[] casosHexToInt = {
+        static readonly object[] casosHexToInt = {
             new object[] {
                 "0",
                 0 },
@@ -100,7 +100,7 @@ namespace Asu.Tests {
                 0 },
         };
 
-        static object[] casosFiltrarColores = {
+        static readonly object[] casosFiltrarColores = {
             new object[] {
                 "0C2238",
                 new TagTypeColor(12, 34, 56) },
@@ -121,13 +121,13 @@ namespace Asu.Tests {
 
         [SetUp]
         public void Iniciar() {
-            Funciones.CambiarCultura();
+            Funciones.ChangeCulture();
         }
 
         #region Pruebas
         [Test, Category("Funciones"), TestCaseSource("casosTruncar")]
         public void FuncionesTruncar(double ingresado, double esperado, int decimales) {
-            var real = Maths.Truncar(ingresado, decimales);
+            var real = Maths.Truncate(ingresado, decimales);
             Assert.AreEqual(esperado, real);
         }
 
@@ -151,7 +151,7 @@ namespace Asu.Tests {
 
         [Test, Category("Funciones"), TestCaseSource("casosFiltrarColores")]
         public void FuncionesFiltrarColores(string ingresado, TagTypeColor esperado) {
-            var real = Carteles.FiltrarColores(ingresado);
+            var real = Carteles.FilterColors(ingresado);
             Assert.AreEqual(esperado, real);
         }
 
@@ -159,6 +159,7 @@ namespace Asu.Tests {
         public void FuncionesInterpolar() {
             var esperado = new List<int> {
                 0,
+                10,
                 20,
                 30,
                 40,
@@ -166,11 +167,10 @@ namespace Asu.Tests {
                 60,
                 70,
                 80,
-                90,
                 100
             };
 
-            var real = Maths.Interpolar(0, 100, 10);
+            var real = Maths.Interpolate(0, 100, 10);
             Assert.AreEqual(esperado, real);
         }
         #endregion

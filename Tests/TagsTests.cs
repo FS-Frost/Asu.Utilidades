@@ -1,5 +1,5 @@
-﻿using Asu.Utilidades;
-using Asu.Utilidades.Clases;
+﻿using Asu.Utils;
+using Asu.Utils.Core;
 using NUnit.Framework;
 
 namespace Asu.Tests {
@@ -10,7 +10,7 @@ namespace Asu.Tests {
 
         // Tag: a.
         // Rango: entero del 1 al 11.
-        static object[] casosA = {
+        static readonly object[] casosA = {
             new object[] {
                 @"\a0",
                 @"\a0" },
@@ -30,7 +30,7 @@ namespace Asu.Tests {
 
         // Tag: an.
         // Rango: entero del 1 al 9.
-        static object[] casosAn = {
+        static readonly object[] casosAn = {
             new object[] {
                 @"\an0",
                 @"\an0" },
@@ -51,7 +51,7 @@ namespace Asu.Tests {
         // Tag: alpha, 1a, 2a, 3a, 4a.
         // Argumentos: [&H]rr[gg][bb][&]
         // Rango: rr,gg,bb -> hexadecimal del 0 al FF.
-        static object[] casosAlpha = {
+        static readonly object[] casosAlpha = {
             // Argumentos del mínimo al máximo.
             new object[] {
                 @"&H1&",
@@ -95,7 +95,7 @@ namespace Asu.Tests {
 
         // Tag: b, i, s, u.
         // Rango: entero del 0 al 1.
-        static object[] casosBinario = {
+        static readonly object[] casosBinario = {
             // Argumento positivo.
             new object[] {
                 @"1",
@@ -124,7 +124,7 @@ namespace Asu.Tests {
 
         // Tag: be, p.
         // Rango: entero positivo.
-        static object[] casosEnteroPositivo = {
+        static readonly object[] casosEnteroPositivo = {
             // Argumento positivo.
             new object[] {
                 @"0",
@@ -148,7 +148,7 @@ namespace Asu.Tests {
 
         // Tag: blur, fs.
         // Rango: decimal positivo.
-        static object[] casosDoublePositivo = {
+        static readonly object[] casosDoublePositivo = {
             // Argumento positivo.
             new object[] {
                 @"1",
@@ -177,7 +177,7 @@ namespace Asu.Tests {
 
         // Tag: bord, xbord, ybord, fax, fay, frx, fry, frz, fscx, fscy, fsp, pbo, shad, xshad, yshad.
         // Rango: decimal.
-        static object[] casosDouble = {
+        static readonly object[] casosDouble = {
             // Argumento positivo.
             new object[] {
                 @"1",
@@ -217,7 +217,7 @@ namespace Asu.Tests {
         // Tag: clip.
         // Argumentos: x1,y1,x2,y2 |comandos| escala,comandos.
         // Rango: x,y -> decimal; escala -> entero positivo.
-        static object[] casosClip = {
+        static readonly object[] casosClip = {
             // Argumentos: rectángulo.
             new object[] {
                 @"(0,0,-320.2,240)",
@@ -269,7 +269,7 @@ namespace Asu.Tests {
         // Argumentos: x1,y1,x2,y2 |comandos| escala,comandos.
         // Rango: x,y -> decimal; escala -> entero positivo.
         // Tag: c, 1c, 2c, 3c, 4c. Rango hexadecimal del 0 al FF.
-        static object[] casosColor = {
+        static readonly object[] casosColor = {
             // Argumentos del mínimo al máximo.
             new object[] {
                 @"&H1&",
@@ -354,7 +354,7 @@ namespace Asu.Tests {
         // Tag: fad.
         // Argumentos: t1,t2.
         // Rango: entero positivo.
-        static object[] casosFad = {
+        static readonly object[] casosFad = {
             // Argumentos positivos.
             new object[] {
                 @"\fad(1,2)",
@@ -395,7 +395,7 @@ namespace Asu.Tests {
         // Tag: fade.
         // Argumentos: alpha1,alpha2,alpha3,t1,t2,t3,t4.
         // Rango: alpha -> hexadecimal entre 0 y FF, t -> entero.
-        static object[] casosFade = {
+        static readonly object[] casosFade = {
             // Argumentos normales.
             new object[] {
                 @"\fade(225,32,224,0,500,2000,2200)",
@@ -429,7 +429,7 @@ namespace Asu.Tests {
         };
 
         // Tag: fe, fn, r. Rango: string.
-        static object[] casosString = {
+        static readonly object[] casosString = {
             new object[] {
                 @"Arial",
                 @"Arial" },
@@ -439,7 +439,7 @@ namespace Asu.Tests {
         };
 
         // Tag: k, kf, ko. Rango: entero.
-        static object[] casosEntero = {
+        static readonly object[] casosEntero = {
             // Argumento positivo.
             new object[] {
                 @"1",
@@ -474,7 +474,7 @@ namespace Asu.Tests {
         // Tag: move.
         // Argumentos: x1,y1,x2,y2[,t1][,t2].
         // Rango: x,y -> decimal; t -> entero.
-        static object[] casosMove = {
+        static readonly object[] casosMove = {
             new object[] {
                 @"\move(1,2,3,4)",
                 @"\move(1,2,3,4)" },
@@ -492,7 +492,7 @@ namespace Asu.Tests {
         // Tag: org, pos.
         // Argumentos: x,y.
         // Rango: decimal.
-        static object[] casosPos = {
+        static readonly object[] casosPos = {
             new object[] {
                 @"(1,2)",
                 @"(1,2)" },
@@ -512,7 +512,7 @@ namespace Asu.Tests {
 
         // Tag: q.
         // Rango: entero entre 0 y 3.
-        static object[] casosQ = {
+        static readonly object[] casosQ = {
             // Argumento positivo.
             new object[] {
                 @"1",
@@ -536,7 +536,7 @@ namespace Asu.Tests {
         // Tag: t.
         // Argumentos: [comentario][\tag1][\tagN]
         // Rango: comentario -> string.
-        static object[] casosT = {
+        static readonly object[] casosT = {
             new object[] {
                 @"\t(\fs32)",
                 @"\t(\fs32)" },
@@ -550,11 +550,13 @@ namespace Asu.Tests {
                 @"\t(1,2,3.4,comentario\fs32)",
                 @"\t(1,2,3.4,comentario\fs32)" },
         };
+
+        public static object[] CasosEntero => casosEntero;
         #endregion
 
         [SetUp]
         public void Iniciar() {
-            Funciones.CambiarCultura();
+            Funciones.ChangeCulture();
         }
         
         #region Pruebas
@@ -576,8 +578,8 @@ namespace Asu.Tests {
         [Test, Category("Tag"), Category("TagAlpha")]
         public void Alpha1Campos() {
             var tag = new TagAlpha1(25);
-            Assert.AreEqual(tag.Nombre, "1a");
-            Assert.AreEqual(tag.Argumento, 25);
+            Assert.AreEqual(tag.Name, "1a");
+            Assert.AreEqual(tag.Argument, 25);
         }
 
         [Test, Category("Tag"), Category("TagAlpha")]
@@ -940,7 +942,7 @@ namespace Asu.Tests {
         [Test, Category("Tag"), Category("TagPos")]
         public void PosCampos() {
             var tag = new TagPos(100, 50);
-            Assert.AreEqual(tag.Nombre, "pos");
+            Assert.AreEqual(tag.Name, "pos");
             Assert.AreEqual(tag.X, 100);
             Assert.AreEqual(tag.Y, 50);
         }

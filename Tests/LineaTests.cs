@@ -1,11 +1,11 @@
-﻿using Asu.Utilidades.Clases;
+﻿using Asu.Utils.Core;
 using NUnit.Framework;
 
 namespace Asu.Tests {
     [TestFixture]
     public class LineaTests {
         #region Casos de prueba
-        static object[] casosString = {
+        static readonly object[] casosString = {
             new object[] {
                 @"Dialogue: 0,0:00:00.00,0:00:05.00,Default,,0,0,0,,Texto",
                 @"Dialogue: 0,0:00:00.00,0:00:05.00,Default,,0,0,0,,Texto" },
