@@ -2,7 +2,7 @@
 Library on .NET Framework to work with subtitles on ASS format.
 
 ## Requirements
-- Microsoft .Net Framework 4.0 o mayor.
+- Microsoft .Net Framework 4.0 or higher.
 - NUnit Framework 3.9.
 
 ## Some use cases
